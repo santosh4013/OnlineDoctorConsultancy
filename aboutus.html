@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            aboutus
+        </title>
+        <style>
+            body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+        </style>
+        
+        <link rel="stylesheet" href="theme.css">
+        <link rel="stylesheet" href="bootstrap.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel="stylesheet" href="swiper-bundle.min.css">
+	<!-- Custom stlylesheet -->
+
+    </head>
+    <body>
+      <header class="head">
+        <div class="header" id="myHeader" style="background-color: rgb(255, 255, 255,0.7); ">
+          <a href="#" style="font-size: 20px; padding: 20px; padding-left:30px;"><span style="color: blue;"><b>Cure</b></span><span style="color: green;">-Me</span></a>
+          <div class="header-right">
+          <a class="active" href="index.html">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#doctor">Doctors</a>
+          <div class="dropdown">
+            <button class="dropbtn">Help 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Questions</a>
+              <a href="#help">Medical Help</a>
+            </div>
+          </div> 
+          <div class="dropdown">
+            <button class="dropbtn">News 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Deseases</a>
+              <a href="#news">Health Tips</a>
+            </div>
+          </div>  
+          
+          <a href="#contact">Contact</a>
+          <button style="background-color: #4CAF50; border: none; color: white;text-align: center;font-size: 16px;border-radius: 4px; padding: 12px;" onclick="location.href = 'login.html';">Login/Register</button></div>
+  
+  
+          
+        </div> <!-- .container -->
+  </header>
+        <div class="about-section">
+            <h1>About Us Page</h1>
+            <p>Some text about who we are and what we do.</p>
+            <p>Resize the browser window to see that this page is responsive by the way.</p>
+          </div>
+          
+          <h2 style="text-align:center">Our Team</h2>
+          <div class="row">
+            <div class="column">
+              <div class="card" style="display: none;">
+                <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+                <div class="container">
+                  <h2>Jane Doe</h2>
+                  <p class="title">CEO & Founder</p>
+                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>jane@example.com</p>
+                  <p><button class="button">Contact</button></p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="column">
+              <div class="card">
+                <img src="https://p.kindpng.com/picc/s/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png" alt="Mike" style="width:50px">
+                <div class="container">
+                  <h2>Gudimetla Surya Santosh Reddy</h2>
+                  <p class="title">Details</p>
+                  <p>Roll: CB.EN.U4CSE19322</p>
+                  <p>19CSE461-netcentric Programming</p>
+                  <p><button class="button">Contact</button></p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="column">
+              <div class="card" style="display: none;">
+                <img src="/w3images/team3.jpg" alt="John" style="width:100%">
+                <div class="container">
+                  <h2>John Doe</h2>
+                  <p class="title">Designer</p>
+                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>john@example.com</p>
+                  <p><button class="button">Contact</button></p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>

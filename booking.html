@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<title>Booking Form</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="booking_style.css" />
+
+</head>
+
+<body>
+	<header class="head">
+		<div class="header" id="myHeader" style="background-color: #f1f1f1;">
+		  <a href="#" style="font-size: 20px; padding: 20px; padding-left:30px;"><span style="color: blue;">Cure</span><span style="color: green;">-Me</span></a>
+		  <div class="header-right">
+		  <a class="active" href="index.html">Home</a>
+		  <a href="#contact">About Us</a>
+		  <a href="#contact">Doctors</a>
+		  <div class="dropdown">
+			<button class="dropbtn">Help 
+			  <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+			  <a href="#">Questions</a>
+			  <a href="#">Medical Help</a>
+			</div>
+		  </div> 
+		  <div class="dropdown">
+			<button class="dropbtn">News 
+			  <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+			  <a href="#">Deseases</a>
+			  <a href="#">Health Tips</a>
+			</div>
+		  </div> 
+		  
+		  <a href="#about">Contact</a>
+		  <button style="background-color: #4CAF50; border: none; color: white;text-align: center;font-size: 16px;border-radius: 4px; padding: 12px;"  onclick="location.href = 'profile.html';">Profile</button></div>
+  
+  
+		  
+		</div> <!-- .container -->
+  </header>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-md-push-5">
+						<div class="booking-cta">
+							<h1>Make your reservation</h1>
+							<p>Skip the travel!
+                                Take Online Doctor Consultation
+                                Private consultation + Audio call · Starts at just ₹199
+							</p>
+                            
+						</div>
+					</div>
+					<div class="col-md-4 col-md-pull-7">
+						<div class="booking-form" ng-app = "mainApp" ng-controller = "studentController">
+							<form name = "studentForm" action="process_get1" method="POST" novalidate>
+								<div class="form-group">
+                                    
+									<span class="form-label">Tell us your symptom or health problem</span>
+									<textarea class="form-control" type="text" name="prob" ng-model = "prob" placeholder="Eg: fever, headache" style="height: 100px" required></textarea>
+									<span style = "color:red" ng-show = "studentForm.prob.$dirty && studentForm.prob.$invalid">
+										<span ng-show = "studentForm.prob.$error.required">Health problem is required.</span>
+									 </span>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Date</span>
+											<input class="form-control" name="date" min="2022-11-22" type="date" ng-model = "date" required>
+											<span style = "color:red" ng-show = "studentForm.date.$dirty && studentForm.date.$invalid">
+												<span >date is required.</span>
+											 </span>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Phone Number</span>
+											<input class="form-control" name="phone" type="text" ng-model = "phone" maxlength="10" required>
+											<span style = "color:red" ng-show = "studentForm.phone.$dirty && studentForm.phone.$invalid">
+												<span >phoneNumber is required.</span>
+											 </span>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Time</span>
+											<input name="time" id="time" type="time" class="form-control" placeholder="Time" ng-model = "time" required>
+											<span style = "color:red" ng-show = "studentForm.time.$dirty && studentForm.time.$invalid">
+												<span >Time is required.</span>
+											 </span>
+											
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Department</span>
+											<select class="form-control" name="depart">
+												<option>Gynecologist</option>
+												<option>General Physician</option>
+												<option>Orthopedician</option>
+                                                <option>Dietitian</option>
+                                                <option>Pediatrician</option>
+												<option>Dermatologist</option>
+												<option>Psychiatrist</option>
+                                                <option>Andrologist</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									
+								</div>
+								<div class="form-btn">
+									<button class="submit-btn" ng-click="submit()" type="submit">Consult Now</button>
+									
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <script>
+        function valid(){
+            
+            var un = document.form.prob.value;
+            
+            var pas = document.form.date.value;
+
+			var ph = document.form.phone.value;
+  
+            if( un== ""){
+                alert("Please explain the problem or about deasease you are suffering with");
+            }
+            else if(pas == ""){
+                alert("Please select the date of booking");
+            }
+			else if(ph == ""){
+                alert("Please enter the phone number");
+            }
+            
+        }
+
+	
+
+    </script> -->
+
+	<script>
+		var mainApp = angular.module("mainApp", []);
+      
+      mainApp.controller('studentController', function($scope) {
+         
+         
+        //  $scope.reset();
+      });
+	</script>
+	
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
